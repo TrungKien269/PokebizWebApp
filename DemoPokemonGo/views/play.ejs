@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/catch-pokemon.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/play.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/catch-pokemon.js"></script>
+</head>
+
+<style>
+    #map {
+        width: 60%;
+        height: 100%;
+        margin-left: 50%;
+        transform: translateX(-50%)
+    }
+
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+<body>
+
+    <div id="map"></div>
+    <div id="Avatar" value="<%= character %>"></div>
+
+    <div class="bannner-topleft">
+        <a href="https://lienminh.garena.vn/">
+            <img src="/images/Advertisement/QC2.jpg" alt="#" id="imgtopleft">
+        </a>
+    </div>
+
+    <div class="bannner-bottomleft">
+        <a href="https://www.konami.com/wepes">
+            <img src="/images/Advertisement/QC3.jpg" alt="#" id="imgbottomleft">
+        </a>
+    </div>
+
+    <div class="bannner-right">
+        <a href="https://phimonl.net/biet-doi-sieu-anh-hung-4-tan-cuoc-54787.html">
+            <img src="/images/Advertisement/QC4.jpg" alt="#" id="imgright">
+        </a>
+    </div>
+
+    <div class="partial">
+        <div class="background-catch-pokemon">
+            <div class="main-catch-pokemon">
+                <div class="content-catch-pokemon">
+                    <div class="click-event"></div>
+                    <div class="pokemon-catch">
+                        <img src="/images/pokemons-name/Pikachu.png" alt="" class="img-fluid" 
+                        id="imgCatchPokemon">
+                        <div id="catchPokeID"></div>
+                    </div>
+                    <i class="fas fa-running myRun"></i>
+                    <div class="pokeball" data-id="ball1">
+                        <img src="/images/balls/<%= balls[0].ball_id %>.png" alt="" class="img-fluid">
+                        <div class="number">x
+                            <%= balls[0].quantity %>
+                        </div>
+                    </div>
+                    <div class="list-pokeball">POKEBALLS
+                        <ul class="d-flex justify-content-around align-items-center">
+                            <li>
+                                <img src="/images/balls/<%= balls[0].ball_id %>.png" data-id="ball1" alt="" class="img-fluid">
+                                <div class="numberball1" value="<%= balls[0].quantity %>">x
+                                    <%= balls[0].quantity %>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="/images/balls/<%= balls[1].ball_id %>.png" data-id="ball2" alt="" class="img-fluid">
+                                <div class="numberball2" value="<%= balls[1].quantity %>">x
+                                    <%= balls[1].quantity %>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="/images/balls/<%= balls[2].ball_id %>.png" data-id="ball3" alt="" class="img-fluid">
+                                <div class="numberball3" value="<%= balls[2].quantity %>">x
+                                    <%= balls[2].quantity %>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="/images/balls/<%= balls[3].ball_id %>.png" data-id="ball4" alt="" class="img-fluid">
+                                <div class="numberball4" value="<%= balls[3].quantity %>">x
+                                    <%= balls[3].quantity %>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item-pokeball">
+                        <img src="/images/balls/<%= balls[0].ball_id %>.png" alt="" class="img-fluid">
+                    </div>
+
+                    <div class="list-berry">BERRIES
+                        <ul class="d-flex justify-content-around align-items-center">
+                            <li>
+                                <img src="/images/toolboxes/<%= toolboxes[0].toolbox_id %>.png" data-id="berry1" alt=""
+                                    class="img-fluid">
+                                <div class="numberberry1" value="<%= toolboxes[0].quantity %>">x
+                                    <%= toolboxes[0].quantity %>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="/images/toolboxes/<%= toolboxes[1].toolbox_id %>.png" data-id="berry2" alt=""
+                                    class="img-fluid">
+                                <div class="numberberry2" value="<%= toolboxes[1].quantity %>">x
+                                    <%= toolboxes[1].quantity %>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="/images/toolboxes/<%= toolboxes[2].toolbox_id %>.png" data-id="berry3" alt=""
+                                    class="img-fluid">
+                                <div class="numberberry3" value="<%= toolboxes[2].quantity %>">x
+                                    <%= toolboxes[2].quantity %>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="/images/toolboxes/<%= toolboxes[3].toolbox_id %>.png" data-id="berry4" alt=""
+                                    class="img-fluid">
+                                <div class="numberberry4" value="<%= toolboxes[3].quantity %>">x
+                                    <%= toolboxes[3].quantity %>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item-berry">
+                        <img src="/images/toolboxes/<%= toolboxes[0].toolbox_id %>.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="like">
+                        <img src="/images/like.png" class="img-fluid" alt="">
+                    </div>
+                    <div class="gotcha">GOTCHA</div>
+                    <div class="escape">ESCAPE</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/play.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6yguXT9Axmq4YONkT7flSBv9kqKEv3wY&callback=initMap"
+        async defer></script>
+</body>
+
+</html>

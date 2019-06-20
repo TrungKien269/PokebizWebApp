@@ -1,0 +1,41 @@
+.serverchat{
+    position: absolute;
+    top: 1%;
+    left: 65%;
+}
+
+#btnSend{
+    display: inline-block;
+    width: 20%;
+    display: none;
+  }
+  
+  #txtChat{
+    display: inline-block;
+    width: 100%;
+    background-color: #124E78;
+    color: #F0F0C9;
+    padding-left: 10px;
+  }
+  
+  .form-chat{
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .chatbox{
+    width: 100%;
+    margin-top: 20%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    height: 300px;
+    color: #F0F0C9;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    overflow: hidden;
+  }
+
+  .chatbox:hover{
+    overflow: scroll;
+    overflow-x: hidden;
+  }

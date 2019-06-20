@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/history.css">
+    <link href="https://fonts.googleapis.com/css?family=Lemonada:400,600,700&display=swap&subset=vietnamese"
+        rel="stylesheet">
+
+    <script src="/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <title>History</title>
+</head>
+
+<body>
+    <div class="background-taikhoan">
+        <h1 class="text-center">Transaction History</h1>
+        <div class="content">
+            <div class="container h-100 d-flex align-items-center">
+                <div class="list-DonHang" id="style-1">
+                    <% for(var i = 0; i < data.length; i++){ %>
+                    <div class="motDonHang p-4">
+                        <div class="row d-flex justify-content-between px-4">
+                            <div>
+                                <h5><b>No: </b>#<%= data[i]._id %></h5>
+                            </div>
+                            <div>
+                                <h5><b>Date time: </b><%= data[i].datetime %></h5>
+                            </div>
+                        </div>
+
+                        <div class="sanPhamDonHang">
+                            <div class="row">
+                                <div class="col-sm-6 text-center">
+                                    <b>Product</b>
+                                </div>
+                                <div class="col-sm-3 text-center">
+                                    <b>Số lượng</b>
+                                </div>
+                                <div class="col-sm-3 text-center">
+                                    <b>Đơn giá</b>
+                                </div>
+                            </div>
+                            <hr>
+                            <% count = 0 %>
+                            <% for(var j = 0; j < data[i].Detail.length; j++){ %>
+                            <div class="row d-flex align-items-center">
+                                <div class="col-sm-3 text-center">
+                                    <div class="motHinhNho">
+                                        <% if(data[i].Detail[j].type == "ball") { %>
+                                        <img src="/images/balls/<%= data[i].Detail[j].item_id %>.png" 
+                                        class="img-fluid" alt="">
+                                        <%  } else {%>
+                                        <img src="/images/toolboxes/<%= data[i].Detail[j].item_id %>.png" 
+                                        class="img-fluid" alt="">  
+                                        <%  }%>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <%= data[i].Detail[j].name %>
+                                </div>
+                                <div class="col-sm-3 text-center"><%= data[i].Detail[j].quantity %></div>
+                                <div class="col-sm-3 text-center"><%= data[i].Detail[j].price %> </div>
+                                <%count = count + (data[i].Detail[j].quantity * data[i].Detail[j].price) %>
+                                <% if(j + 1 == data[i].Detail.length) { %>
+                                    <div class="col-sm-3 text-center"></div>
+                                    <div class="col-sm-3 text-center"></div>
+                                    <div class="col-sm-3 text-center"></div>
+                                    <div class="col-sm-3 text-center"><b>Tổng tiền: </b><%= count %></div>
+                                <%  }%>
+                            </div>
+                            <!-- hết một sản phẩm -->
+                            <%  }%>
+                        </div>
+                    </div>
+                    <!-- hết một hóa đơn -->
+                    <%  }%>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

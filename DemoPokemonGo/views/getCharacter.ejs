@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/createCharacter.css">
+    <link rel="stylesheet" href="/css/getCharacter.css">
+    <script src="/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/socket.io/socket.io.js" charset="utf-8"></script>
+    <script src="/js/getCharacter.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet">
+    <title>Character</title>
+</head>
+
+<body>
+    <div class="body-create-figure">
+        <div class="background-playgame">
+            <div class="box-play">
+                <div class="box-front">
+                    <img src="/images/logo.png" class="img-fluid" alt="">
+                </div>
+                <div class="box-back">
+                    <img src="/images/logo.png" class="img-fluid" alt="">
+                </div>
+                <div class="box-left d-flex align-items-center justify-content-center" id="phantramtrai">
+                    0 %
+                </div>
+                <div class="box-right d-flex align-items-center justify-content-center" id="phantramphai">
+                    0 %
+                </div>
+            </div>
+        </div>
+        <!-- hết hiệu ứng load -->
+        <div class="myFigure">
+            <img src="/images/characters/<%= character.name %>.png" alt="" class="figure">
+            <button type="button" class="btn btn-primary" id="btnPlay">PLAY</button>
+        </div>
+        <!-- hết div hình nhân vật -->
+        <div class="polygonBottom"></div>
+        <div class="polygonBottom2"></div>
+        <div class="polygonTop"></div>
+        <div class="name">
+            <div class="nameFigure" id="nickname" value="<%= data[0].nickname %>">
+                <%= data[0].nickname %>
+            </div>
+            <div id="character" value="<%= character.name %>"></div>
+            <div class="level">
+                <%= level %> <br>&ensp; Level</div>
+            <div class="exp">
+                Exp
+                <%= exp %>
+            </div>
+        </div>
+
+        <div class="myButton">
+            <button class="btn btn-primary btnpokeball">
+                <a href="/userballs">Pokeball</a>
+            </button>
+            <button class="btn btn-primary btnToolbox">
+                <a href="/usertoolboxes">Toolbox</a>
+            </button>
+            <button class="btn btn-primary btnPokedex">
+                <a href="/userpokedex">Pokedex</a>
+            </button>
+            <button class="btn btn-primary btnPokemons">
+                <a href="/userpokemons">Pokemons</a>
+            </button>
+            <button class="btn btn-primary btnPokeshop">
+                <a href="/pokeshop">Pokeshop</a>
+            </button>
+            <button class="btn btn-primary btnLogout">
+                <a href="/logout">Log out</a>
+            </button>
+            <button class="btn btn-primary btnUpdateInfo">
+                <a href="/updateInfo">Edit Profile</a>
+            </button>
+            <button class="btn btn-primary btnChangePassword">
+                <a href="/changePassword">Change Password</a>
+            </button>
+            <button class="btn btn-primary btnHistory">
+                <a href="/history">History Transaction</a>
+            </button>
+        </div>
+    </div>
+
+    <div class="serverchat">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <section class="chatbox" id="all_chats">
+                        <% for(var i = 0; i < chatbox.length; i++){ %>
+                        <p><strong>
+                                <%= chatbox[i].name %>:</strong>
+                            <%= chatbox[i].text %>
+                        </p>
+                        <%  }%>
+                    </section>
+                    <div class="form-chat">
+                        <form class="" method="dialog" id="chat_form">
+                            <input size="50" type="text" name="message" id="txtChat" placeholder="Your message here..."
+                                autofocus autocomplete="off">
+                            <input type="button" class="btn btn-primary" id="btnSend" value="Send">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

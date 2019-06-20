@@ -1,0 +1,437 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.anhNen {
+    background: url("/images/Background-create-figure.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.content-Shop {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.store {
+    position: absolute;
+    width: 60%;
+    height: 86%;
+    top: 10%;
+    left: 20%;
+    background: linear-gradient(90deg, white, #E8FCF0);
+    animation: chayxuong 2s forwards;
+    border: 10px double #92817e;
+    border-radius: 10px;
+}
+
+@-webkit-keyframes chayxuong {
+    0% {
+        transform: translateY(-100%);
+    }
+    16% {
+        transform: translateY(10.27%);
+    }
+    28% {
+        transform: translateY(-5.88%);
+    }
+    44% {
+        transform: translateY(3.63%);
+    }
+    59% {
+        transform: translateY(-2.36%);
+    }
+    73% {
+        transform: translateY(0.58%);
+    }
+    88% {
+        transform: translateY(-0.8%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+.shadow-logo{
+	filter: drop-shadow(0px 5px 5px #212529ab);
+}
+
+.logo-store {
+    text-align: center;
+    height: 22%;
+    background-color: #786851;
+    -webkit-clip-path: polygon(30% 16%, 0 16%, 0 0, 100% 0, 100% 16%, 70% 16%, 60% 100%, 40% 100%);
+}
+
+.logo-store img {
+    width: 19%;
+}
+
+.background-logo {
+    background-color: #F8FF00;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 16%;
+    width: 100%;
+}
+
+.danhmuc {
+    position: relative;
+    margin: 20px;
+    text-align: center;
+}
+
+.danhmuc .duongthang {
+    position: absolute;
+    height: 2px;
+    background: gray;
+    width: 100%;
+    top: 50%;
+    z-index: -1;
+}
+
+.danhmuc .tendanhmuc {
+    background: linear-gradient(90deg, #f5fef9, #f2fdf7);
+    display: inline-block;
+    padding: 0px 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    color: #663939;
+    font-weight: bold;
+}
+
+.my-items{
+    margin: 5% 5%;
+    height:300px;
+    overflow: hidden;
+}
+.my-items:hover{
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.my-items .card .card-img-top {
+    width: 70%;
+    margin: 0 15%;
+}
+
+.my-items .card {
+    text-align: center;
+    border: 0px;
+    background: transparent;
+    font-family: 'Josefin Sans', sans-serif;    
+}
+
+.btn-pokecoin,.donGia,.tongGia {
+    width: 60%;
+    background: #E5F4DE;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    margin: auto;
+    cursor: pointer;
+}
+
+.btn-pokecoin img.img-fluid,.donGia img.img-fluid,.tongGia img.img-fluid{
+    width: 30%;
+}
+
+#style-1::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
+.my-pokecoins, .btn-cart {
+    position: absolute;
+    bottom: -20px;
+    left: 15%;
+    width: 15%;
+    font-family: 'Josefin Sans', sans-serif;    
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.my-pokecoins {
+    position: absolute;
+    bottom: -20px;
+    left: 15%;
+    width: 15%;
+    font-family: 'Josefin Sans', sans-serif;    
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.my-pokecoins img.img-fluid {
+    width: 40%;
+}
+
+.nap-pokecoin {
+    margin: 10px;
+}
+
+.nap-pokecoin i.fab.fa-cc-amazon-pay {
+    font-size: 40px;
+    color: #201313;
+    cursor: pointer;
+}
+
+.nap-pokecoin i.fab.fa-cc-amazon-pay:hover {
+    color: #2d2d7c;
+}
+
+.background-che {
+    background: #36333399;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: 1s;
+}
+
+.napcard {
+    position: absolute;
+    background: white;
+    width: 40%;
+    height: 60%;
+    top: 20%;
+    left: 30%;
+    text-align: center;
+    transform-origin: 50% 0;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px;
+  
+}
+
+.napcard div{
+    margin: 10px auto;
+}
+
+.hienra {
+    visibility: visible;
+    opacity: 1;
+}
+
+.hieuUngNapCard{
+    transition: 1s;
+    animation: phongTo 1s ease-out forwards;
+}
+
+@-webkit-keyframes phongTo{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+        top: 30%;
+    }
+}
+
+.btnMenhGia{
+    margin: 10px;
+}
+
+.code {
+    display: inline-block;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+}
+
+.napcard input#formGroupExampleInput {width: 70%;display: inline-block;}
+
+.btnketthuc{
+    margin: 20px;
+}
+
+.btn-cart {
+    right: 15%;
+    left: inherit;
+    cursor: pointer;
+    transition: .5s;
+}
+
+
+.btn-cart:hover {
+    color: #337390;
+}
+
+.my-cart {
+    width: 50%;
+    height: 70%;
+    background: linear-gradient(90deg, #f5fef9, #f2fdf7);
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    border-radius: 20px;
+    box-shadow: 2px 2px 20px;
+    visibility: hidden;
+    opacity: 0;
+    transform-origin: 0 0;
+    scale: 0;
+}
+
+.hieuUngCart{
+    animation: phongToCart 1s ease-out forwards;
+}
+
+.hienra {
+    visibility: visible;
+    opacity: 1;
+}   
+
+
+@-webkit-keyframes phongToCart{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+        top: 15%;
+        left: 25%;
+    }
+}
+
+.my-cart .img-shoppingcart {
+    position: absolute;
+    top: -55px;
+}
+
+.my-cart .list-items {
+    width: 80%;
+    height: 70%;
+    margin: auto;
+    margin-top: 55px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+}
+
+.my-cart .list-items #stylecart{
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 90%;
+}
+
+.danhmuccart {
+    border-bottom: 2px solid;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.donGia .tongGia {
+    margin: 0;
+    width: 100%;
+    font-size: 1em;
+    cursor: auto;
+}
+.list-items .delete{
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.list-items .delete:hover{
+    cursor: pointer;
+    color: #337390;
+}
+
+.btn-ketthuc-cart{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.tongGia{
+    background: transparent;
+    margin: 0;
+}
+
+.btn-mua, .btn-quayve{
+    width: 100%;
+    font-size: 1.5em;
+
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #e74c3c !important;
+}
+
+.searchbar {
+    margin-bottom: auto;
+    margin-top: 30px;
+    margin-bottom: -30px;
+    height: 60px;
+    background-color: #cbcebcd2;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.search_input {
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color: transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+}
+
+.searchbar:hover>.search_input {
+    padding: 0 10px;
+    width: 450px;
+    caret-color: red;
+    transition: width 0.4s linear;
+    color: #212529;
+    font-weight: bold;
+}
+
+.searchbar:hover>.search_icon {
+    background: white;
+    color: #e74c3c;
+}
+
+.search_icon {
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+}

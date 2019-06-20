@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/manageItem.css">
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/jquery-3.3.1.slim.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        crossorigin="anonymous">
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <script src="/js/manageItem.js"></script>
+    <title>Manage Item</title>
+</head>
+
+<body>
+    <div class="container-fluid" style="background: #e4d2d2">
+        <div class="row">
+            <div class="col-sm-3 show-figure">
+                <img src="/images/Rayquaza.png" alt="" class="figure">
+                <!-- hết hình nhân vật -->
+            </div>
+        </div>
+        <div class="col-sm-9 offset-sm-3">
+            <div class="smtitleItem">PokéBalls</div>
+            <div class="row">
+                <div class="card-deck">
+                    <% for(var i = 0; i < Balls.length; i++){ %>
+                    <div class="card item">
+                        <div class="imgitem">
+                            <img class="card-img-top img-fluid" src="/images/balls/<%= Balls[i]._id %>.png" alt="">
+                            <!-- hết hình item -->
+                        </div>
+                        <div class="editball" value="ball<%= Balls[i]._id %>">
+                            <i class="far fa-edit"></i>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title nameitem">
+                                <%= Balls[i].name %>
+                            </h4>
+                            <p class="card-text descitem">
+                                <%= Balls[i].description %>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- hết một item -->
+                    <%  }%>
+                </div>
+            </div>
+            <!-- hết một hàng -->
+
+            <div class="smtitleItem" style="margin-top: 10%;">Toolboxes</div>
+            <div class="row">
+                <div class="card-deck">
+                    <% for(var i = 0; i < 4; i++){ %>
+                    <div class="card item">
+                        <div class="imgitem">
+                            <img class="card-img-top img-fluid" src="/images/toolboxes/<%= Tools[i]._id %>.png" alt="">
+                            <!-- hết hình item -->
+                        </div>
+                        <div class="edittool" value="tool<%= Tools[i]._id %>">
+                            <i class="far fa-edit"></i>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title nameitem">
+                                <%= Tools[i].name %>
+                            </h4>
+                            <p class="card-text descitem">
+                                <%= Tools[i].description %>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- hết một item -->
+                    <%  }%>
+                </div>
+            </div>
+            <!-- hết một hàng -->
+            <div class="row">
+                <div class="card-deck">
+                    <% for(var i = 4; i < 8; i++){ %>
+                    <div class="card item">
+                        <div class="imgitem">
+                            <img class="card-img-top img-fluid" src="/images/toolboxes/<%= Tools[i]._id %>.png" alt="">
+                            <!-- hết hình item -->
+                        </div>
+                        <div class="edittool" value="tool<%= Tools[i]._id %>">
+                            <i class="far fa-edit"></i>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title nameitem">
+                                <%= Tools[i].name %>
+                            </h4>
+                            <p class="card-text descitem">
+                                <%= Tools[i].description %>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- hết một item -->
+                    <%  }%>
+                </div>
+            </div>
+            <!-- hết một hàng -->
+            <div class="row">
+                <div class="card-deck">
+                    <% for(var i = 8; i < 12; i++){ %>
+                    <div class="card item">
+                        <div class="imgitem">
+                            <img class="card-img-top img-fluid" src="/images/toolboxes/<%= Tools[i]._id %>.png" alt="">
+                            <!-- hết hình item -->
+                        </div>
+                        <div class="edittool" value="tool<%= Tools[i]._id %>">
+                            <i class="far fa-edit"></i>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title nameitem">
+                                <%= Tools[i].name %>
+                            </h4>
+                            <p class="card-text descitem">
+                                <%= Tools[i].description %>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- hết một item -->
+                    <%  }%>
+                </div>
+            </div>
+            <!-- hết một hàng -->
+            <div class="row">
+                <div class="card-deck">
+                    <div class="card item">
+                        <div class="imgitem">
+                            <img class="card-img-top img-fluid" src="/images/toolboxes/13.png" alt="">
+                            <!-- hết hình item -->
+                        </div>
+                        <div class="edittool" value="tool<%= Tools[i]._id %>">
+                            <i class="far fa-edit"></i>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title nameitem">
+                                <%= Tools[12].name %>
+                            </h4>
+                            <p class="card-text descitem">
+                                <%= Tools[12].description %>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- hết một item -->
+                </div>
+            </div>
+            <!-- hết một hàng -->
+        </div>
+
+        <!-- Chỉnh sửa vật phẩm -->
+        <div class="content" id="contentBall">
+            <form  id="frmEditBall" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-sm-6 p-5">
+                        <i class="fas fa-times" id="lbBallRemove"></i>
+                        <div class="form-group">
+                            <label for="">Tên vật phẩm</label>
+                            <input type="text" class="form-control" id="txtBallName" 
+                            name="name">
+                            <div id=BallID value=""></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Giá</label>
+                            <input type="number " class="form-control" id="txtBallPrice" 
+                            name="price">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Mô tả</label>
+                            <textarea class="form-control" id="txtBallDescription" rows="3"
+                            name="description"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 p-5">
+                        <div class="form-group">
+                            <input class="input-file" id="myball"
+                            type="file" name="files">
+                            <label tabindex="0" for="myball" class="input-file-trigger">Chọn ảnh</label>
+                        </div>
+                        <div class="anhDaiDien">
+                            <img src="" alt="" id="imgBall">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="btn btn-primary themVatPham" id="btnSaveBall" 
+                    type="button">Save</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="content" id="contentTool">
+            <form  id="frmEditTool" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-sm-6 p-5">
+                        <i class="fas fa-times" id="lbToolRemove"></i>
+                        <div class="form-group">
+                            <label for="">Tên vật phẩm</label>
+                            <input type="text" class="form-control" id="txtToolName" 
+                            name="name">
+                            <div id=ToolID value=""></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Giá</label>
+                            <input type="number " class="form-control" id="txtToolPrice" 
+                            name="price">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Mô tả</label>
+                            <textarea class="form-control" id="txtToolDescription" rows="3"
+                            name="description"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 p-5">
+                        <div class="form-group">
+                            <input class="input-file" id="mytool"
+                            type="file" name="files">
+                            <label tabindex="0" for="mytool" class="input-file-trigger">Chọn ảnh</label>
+                        </div>
+                        <div class="anhDaiDien">
+                            <img src="" alt="" id="imgTool">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="btn btn-primary themVatPham" id="btnSaveTool" 
+                    type="button">Save</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</body>
+
+</html>

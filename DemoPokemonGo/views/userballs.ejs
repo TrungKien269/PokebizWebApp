@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/css/usertoolboxes.css">
+    <script src="../public/js/jquery-3.3.1.slim.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        crossorigin="anonymous">
+    <script src="./public/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <script src="../public/js/usertoolboxes.js"></script>
+    <title>PokeBalls</title>
+</head>
+
+<body>
+    <div class="container-fluid" style="background: #e4d2d2">
+        <div class="row">
+            <div class="col-sm-3 show-figure">
+                <img src="../public/images/characters/<%= avatar %>.png" alt="" class="figure">
+                <!-- hết hình nhân vật -->
+            </div>
+        </div>
+        <div class="col-sm-9 offset-sm-3">
+            <div class="smtitleItem">PokéBalls</div>
+            <div class="row">
+                <div class="card-deck">
+                    <% for(var i = 0; i < data.length; i++){ %>
+                    <div class="card item">
+                        <div class="imgitem">
+                            <img class="card-img-top img-fluid" src="../public/images/balls/<%= data[i].Balls[0]._id %>.png"
+                                alt="">
+                            <!-- hết hình item -->
+                            <div class="number">
+                                <%= data[i].quantity %>
+                            </div>
+                            <!-- hết số lượng của từng item -->
+                            <a href="" class="xoaitem"><i class="far fa-trash-alt"></i></a>
+                            <!-- hết nút xóa item -->
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title nameitem">
+                                <%= data[i].Balls[0].name %>
+                            </h4>
+                            <p class="card-text descitem">
+                                <%= data[i].Balls[0].description %>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- hết một item -->
+                    <%  }%>
+                </div>
+            </div>
+            <!-- hết một hàng -->
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/css/userpokedex.css">
+    <link rel="stylesheet" href="../public/css/infoPokemon.css">
+    <script src="../public/js/jquery-3.3.1.slim.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i&amp;subset=vietnamese"
+        rel="stylesheet">
+    <script src="../public/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <script src="../public/js/usertoolboxes.js"></script>
+    <script src="../public/js/infomation-pokemon.js"></script>
+    <title>Pokedex</title>
+</head>
+
+<body>
+    <div class="container-fluid" style="background: white">
+        <div class="row">
+            <div class="col-sm-3 show-figure">
+                <img src="../public/images/characters/<%= avatar %>.png" alt="" class="figure">
+                <!-- hết hình nhân vật -->
+            </div>
+        </div>
+        <div class="col-sm-9 offset-sm-3">
+            <div class="smtitleItem">PokéDex</div>
+            <% if(data.length > 0) { %>
+            <!-- Kiểm tra xem dữ liệu có mới show ra -->
+            <% for(var r = 0; r <= row; r++){ %>
+            <div class="row">
+                <div class="card-deck">
+                    <% for(var i = indexRow[r]; i < indexRow[r + 1]; i++){ %>
+                    <div class="card item">
+                        <div class="imgitem">
+                            <img class="imgpokemon" src="../public/images/pokemons-name/<%= data[i].Pokemon[0].name %>.png"
+                                alt="" data-toggle="modal" data-target="#model<%= i %>">
+                            <!-- hết hình item -->
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title nameitem">
+                                <%= data[i].Pokemon[0].name %>
+                            </h4>
+                        </div>
+                    </div>
+                    <!-- hết một item -->
+                    <div class="modal fade" id="model<%= i %>" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content myContent">
+                                <div class="infoPokemon">
+                                    <img src="../public/images/pokemons-info/<%= data[i].Pokemon[0]._id %>.png" alt="" class="img-fluid">
+                                </div>
+                                <div class="contentInfo">
+                                    <div class="name"><%= data[i].Pokemon[0].name %></div>
+                                    <div class="hp"></div>
+                                    <div class="numberHp"><%= data[i].Stats[0].hp %></div>
+                                    <div class="weight">
+                                        <div class="numberWeight"><%= data[i].Pokemon[0].weight %> kg</div> WEIGHT
+                                    </div>
+                                    <div class="type"><img src="../public/images/types/<%= data[i].PokemonTypes[0].type_id %>.png" alt="" class="imgType">TYPE</div>
+                                    <div class="height">
+                                        <div class="numberHeight"><%= data[i].Pokemon[0].height %> m</div>HEIGHT
+                                    </div>
+                                    <div class="attack">
+                                        <div class="numberAttack"><%= data[i].Stats[0].attack %></div>ATTACK
+                                    </div>
+                                    <div class="defense">
+                                        <div class="numberDefense"><%= data[i].Stats[0].defense %></div>DEFENSE
+                                    </div>
+                                    <div class="speed">
+                                        <div class="numberSpeed"><%= data[i].Stats[0].speed %></div>SPEED
+                                    </div>
+                                    <div class="total">
+                                        <div class="numberTotal"><%= data[i].Stats[0].total %></div>TOTAL
+                                    </div>
+                                    <div class="evolution">EVOLUTION <br>
+                                        <div class="evolution1"><img src="../public/images/pokemons-info/<%= (data[i].Pokemon[0]._id) %>.png" 
+                                            alt="../public/images/pokemons-info/0.png" class="img-fluid"></div>
+                                        <% if(data[i].Pokemon[0].next_evolution != 0) { %>
+                                            <i class="fas fa-chevron-right myArrow"></i>
+                                            <div class="evolution2"><img src="../public/images/pokemons-info/<%= (data[i].Pokemon[0]._id + 1) %>.png" 
+                                                alt="../public/images/pokemons-info/0.png" class="img-fluid" 
+                                                onerror= "this.src='../public/images/types/0.png'"></div>
+                                        <%  }%>
+                                        <% for(var j = 0; j< pokelist.length; j++){  %>
+                                            <% if(pokelist[j]._id == (data[i].Pokemon[0]._id + 2) && pokelist[j].next_evolution == 0){ %>
+                                                <i class="fas fa-chevron-right myArrow"></i>
+                                                <div class="evolution3"><img src="../public/images/pokemons-info/<%= (data[i].Pokemon[0]._id + 2) %>.png" 
+                                                    alt="../public/images/pokemons-info/0.png" class="img-fluid" 
+                                                    onerror= "this.src='../public/images/types/0.png'"></div>
+                                            <% }%>
+                                        <%  }%>
+                                        
+                                    </div>
+                                </div>
+                                <i class="fas fa-times-circle myClose" data-dismiss="modal"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <%  }%>
+                </div>
+            </div>
+            <!-- hết một hàng -->
+            <%  }%>
+            <% if(full != 0) { %>
+            <div class="row">
+                <div class="card-deck">
+                    <% for(var r = indexRow[indexRow.length - 1]; r < data.length; r++){ %>
+                    <div class="card item">
+                        <div class="imgitem">
+                            <img class="card-img-top img-fluid" src="../public/images/pokemons-name/<%= data[r].Pokemon[0].name %>.png"
+                                alt="" data-toggle="modal" data-target="#model<%= r %>">
+                            <!-- hết hình item -->
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title nameitem">
+                                <%= data[r].Pokemon[0].name %>
+                            </h4>
+                        </div>
+                    </div>
+                    <!-- hết một item -->
+                    <div class="modal fade" id="model<%= r %>" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content myContent">
+                                <div class="infoPokemon">
+                                    <img src="../public/images/pokemons-info/<%= data[r].Pokemon[0]._id %>.png" alt="" class="img-fluid" >
+                                </div>
+                                <div class="contentInfo">
+                                    <div class="name"><%= data[r].Pokemon[0].name %></div>
+                                    <div class="hp"></div>
+                                    <div class="numberHp"><%= data[r].Stats[0].hp %></div>
+                                    <div class="weight">
+                                        <div class="numberWeight"><%= data[r].Pokemon[0].weight %> kg</div> WEIGHT
+                                    </div>
+                                    <div class="type"><img src="../public/images/types/<%= data[r].PokemonTypes[0].type_id %>.png" alt="" class="imgType">TYPE</div>
+                                    <div class="height">
+                                        <div class="numberHeight"><%= data[r].Pokemon[0].height %> m</div>HEIGHT
+                                    </div>
+                                    <div class="attack">
+                                        <div class="numberAttack"><%= data[r].Stats[0].attack %></div>ATTACK
+                                    </div>
+                                    <div class="defense">
+                                        <div class="numberDefense"><%= data[r].Stats[0].defense %></div>DEFENSE
+                                    </div>
+                                    <div class="speed">
+                                        <div class="numberSpeed"><%= data[r].Stats[0].speed %></div>SPEED
+                                    </div>
+                                    <div class="total">
+                                        <div class="numberTotal"><%= data[r].Stats[0].total %></div>TOTAL
+                                    </div>
+                                    <div class="evolution">EVOLUTION <br>
+                                        <div class="evolution1"><img src="../public/images/pokemons-info/<%= (data[r].Pokemon[0]._id) %>.png" 
+                                            alt="../public/images/pokemons-info/0.png" class="img-fluid"></div>
+                                        <% if(data[r].Pokemon[0].next_evolution != 0) { %>
+                                            <i class="fas fa-chevron-right myArrow"></i>
+                                            <div class="evolution2"><img src="../public/images/pokemons-info/<%= (data[r].Pokemon[0]._id + 1) %>.png" 
+                                                alt="../public/images/pokemons-info/0.png" class="img-fluid" 
+                                                onerror= "this.src='../public/images/types/0.png'"></div>
+                                                <!-- <i class="fas fa-chevron-right myArrow"></i> -->
+                                        <%  }%>
+                                        <% for(var j = 0; j< pokelist.length; j++){  %>
+                                            <% if(pokelist[j]._id == (data[r].Pokemon[0]._id + 2) && pokelist[j].next_evolution == 0){ %>
+                                                <i class="fas fa-chevron-right myArrow"></i>
+                                                <div class="evolution3"><img src="../public/images/pokemons-info/<%= (data[r].Pokemon[0]._id + 2) %>.png" 
+                                                    alt="../public/images/pokemons-info/0.png" class="img-fluid" 
+                                                    onerror= "this.src='../public/images/types/0.png'"></div>
+                                            <% }%>
+                                        <%  }%>
+                                        
+                                    </div>
+                                </div>
+                                <i class="fas fa-times-circle myClose" data-dismiss="modal"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <%  }%>
+                </div>
+            </div>
+            <%  }%>
+            <% } %>
+        </div>
+    </div>
+
+    <script>
+        $('#exampleModal').on('show.bs.modal', event => {
+            var button = $(event.relatedTarget);
+            var modal = $(this);
+            // Use above variables to manipulate the DOM
+
+        });
+    </script>
+</body>
+
+</html>

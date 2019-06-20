@@ -1,0 +1,78 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.col-sm-3.show-figure{
+    background: linear-gradient(45deg, #f7c62691 15%, #f68c2f99 40%, #e5127d82 80%);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    border: 4px double #2dc1bfe8;
+}
+img.pokemon {
+    width: 40%;
+    position: absolute;
+    z-index: 1;
+    bottom: 30%;
+    left: 10%;
+}
+
+img.figure {
+    position: absolute;
+    left: 20%;
+    bottom: 30%;
+    width: 50%;
+    z-index: 2;
+}
+.smtitleItem {
+    text-align: center;
+    font-size: 32px;
+    border-bottom: 2px solid #5f5b5b;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.imgitem {
+    width: 70%;
+    margin: auto;
+    position: relative;
+}
+
+.card.item {
+    margin: 20px;
+    width: 200px;
+}
+
+h4.card-title.nameitem {
+    text-align: center;
+}
+
+.number {
+    position: absolute;
+    bottom: 12%;
+    left: 14%;
+    font-size: 17px;
+    background: #2a90b1c7;
+    padding: 0px 5px;
+    font-family: segoe ui light;
+    font-weight: bold;
+    color: white;
+    border-radius: 30%;
+}
+
+a.xoaitem {
+    font-size: 25px;
+    position: absolute;
+    top: 5%;
+    right: 0;
+    color: #6b6a6a;
+}
+
+.myButton {
+    margin: 20px 0;
+}
+
+button.btn.btn-primary {
+    width: 10%;
+}

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/pokeshop.css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        crossorigin="anonymous">
+
+    <script src="/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <script src="/js/pokeshop.js"></script>
+
+
+    <title>Pokeshop</title>
+</head>
+
+<body>
+    <div class="content-Shop">
+        <div class="anhNen"></div>
+        <div class="store">
+            <div class="background-logo"></div>
+            <div class="shadow-logo">
+                <div class="logo-store">
+                    <img src="/images/pokemon_store.png" alt="">
+                    <div class="nap-pokecoin"><i class="fab fa-cc-amazon-pay"></i></div>
+                </div>
+                <div class="my-pokecoins" id="Pokecoins">
+                    <img src="/images/pokeCoin.png" class="img-fluid" alt="">
+                    <%= Finance.pokecoins %>
+                </div>
+                <div class="btn-cart"><i class="fas fa-shopping-cart"></i>CART</div>
+                <p id="CashCard" hidden></p>
+                <p id="UserID" hidden>
+                    <%= UserID %>
+                </p>
+            </div>
+
+            <div class="container">
+                <div class="d-flex justify-content-center h-100">
+                    <div class="searchbar">
+                        <input class="search_input" type="text" name="" placeholder="Search...">
+                        <p href="#" class="search_icon"><i class="fas fa-search"></i></p>
+                    </div>
+                </div>
+                <div class="my-items" id="style-1">
+                    <!-- Danh sách Toolboxes bán -->
+                    <div class="mot-items" id="ShowTool">
+                        <div class="danhmuc">
+                            <div class="duongthang"></div>
+                            <div class="tendanhmuc">Toolboxes</div>
+                        </div>
+                        <div class="card-deck">
+                            <% for(var i = 0; i < 3; i ++) {%>
+                            <div class="card col-sm-4">
+                                <img class="card-img-top" src="/images/toolboxes/<%= Toolboxes[i]._id %>.png" alt="">
+                                <p class="card-text">
+                                    <%= Toolboxes[i].Toolboxes[0].name %>
+                                </p>
+                                <div class="btn-pokecoin" id="tool<%= Toolboxes[i]._id %>">
+                                    <img src="/images/pokeCoin.png" class="img-fluid" alt="">
+                                    <%= Toolboxes[i].price %>
+                                </div>
+                            </div>
+                            <%  }%>
+                        </div>
+
+                        <div class="card-deck">
+                            <% for(var i = 3; i < 6; i ++) {%>
+                            <div class="card col-sm-4">
+                                <img class="card-img-top" src="/images/toolboxes/<%= Toolboxes[i]._id %>.png" alt="">
+                                <p class="card-text">
+                                    <%= Toolboxes[i].Toolboxes[0].name %>
+                                </p>
+                                <div class="btn-pokecoin" id="tool<%= Toolboxes[i]._id %>">
+                                    <img src="/images/pokeCoin.png" class="img-fluid" alt="">
+                                    <%= Toolboxes[i].price %>
+                                </div>
+                            </div>
+                            <%  }%>
+                        </div>
+
+                        <div class="card-deck">
+                            <% for(var i = 6; i < 9; i ++) {%>
+                            <div class="card col-sm-4">
+                                <img class="card-img-top" src="/images/toolboxes/<%= Toolboxes[i]._id %>.png" alt="">
+                                <p class="card-text">
+                                    <%= Toolboxes[i].Toolboxes[0].name %>
+                                </p>
+                                <div class="btn-pokecoin" id="tool<%= Toolboxes[i]._id %>">
+                                    <img src="/images/pokeCoin.png" class="img-fluid" alt="">
+                                    <%= Toolboxes[i].price %>
+                                </div>
+                            </div>
+                            <%  }%>
+                        </div>
+                        <div class="card-deck">
+                            <% for(var i = 9; i < 12; i ++) {%>
+                            <div class="card col-sm-4">
+                                <img class="card-img-top" src="/images/toolboxes/<%= Toolboxes[i]._id %>.png" alt="">
+                                <p class="card-text">
+                                    <%= Toolboxes[i].Toolboxes[0].name %>
+                                </p>
+                                <div class="btn-pokecoin" id="tool<%= Toolboxes[i]._id %>">
+                                    <img src="/images/pokeCoin.png" class="img-fluid" alt="">
+                                    <%= Toolboxes[i].price %>
+                                </div>
+                            </div>
+                            <%  }%>
+                        </div>
+                        <div class="card-deck">
+                            <div class="card col-sm-4">
+                                <img class="card-img-top" src="/images/toolboxes/<%= Toolboxes[12]._id %>.png" alt="">
+                                <p class="card-text">
+                                    <%= Toolboxes[12].Toolboxes[0].name %>
+                                </p>
+                                <div class="btn-pokecoin" id="tool13">
+                                    <img src="/images/pokeCoin.png" class="img-fluid" alt="">
+                                    <%= Toolboxes[12].price %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Danh sách Balls bán -->
+                    <div class="mot-items" id="ShowBall">
+                        <div class="danhmuc">
+                            <div class="duongthang"></div>
+                            <div class="tendanhmuc">Balls</div>
+                        </div>
+
+                        <div class="card-deck">
+                            <% for(var i = 0; i < 3; i ++) {%>
+                            <div class="card col-sm-4">
+                                <img class="card-img-top" src="/images/balls/<%= Pokeballs[i]._id %>.png" alt="">
+                                <p class="card-text">
+                                    <%= Pokeballs[i].Pokeballs[0].name %>
+                                </p>
+                                <div class="btn-pokecoin" id="ball<%= Pokeballs[i]._id %>">
+                                    <img src="/images/pokeCoin.png" class="img-fluid" alt="">
+                                    <%= Pokeballs[i].price %>
+                                </div>
+                            </div>
+                            <%  }%>
+                        </div>
+                        <div class="card-deck">
+                            <div class="card col-sm-4">
+                                <img class="card-img-top" src="/images/balls/<%= Pokeballs[3]._id %>.png" alt="">
+                                <p class="card-text">
+                                    <%= Pokeballs[3].Pokeballs[0].name %>
+                                </p>
+                                <div class="btn-pokecoin" id="ball<%= Pokeballs[3]._id %>">
+                                    <img src="/images/pokeCoin.png" class="img-fluid" alt="">
+                                    <%= Pokeballs[3].price %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="background-che">
+            <div class="napcard  d-flex align-items-center">
+                <div>
+                    <img src="/images/180px-Pokecoins5200.png" alt="">
+                    <div class="btnMenhGia">
+                        <button type="button" class="btn btn-danger">20000VND</button>
+                        <button type="button" class="btn btn-danger">50000VND</button>
+                        <button type="button" class="btn btn-danger">100000VND</button>
+                        <button type="button" class="btn btn-danger">200000VND</button>
+                    </div>
+                    <div class="code">CODE</div>
+                    <input type="text" class="form-control" id="txtCode">
+                    <div class="btnketthuc">
+                        <button type="button" class="btn btn-primary col-3 xacnhan">Xác nhận</button>
+                        <button type="button" class="btn btn-primary col-3 dong">Đóng</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="my-cart">
+                <img src="/images/shoppingcart.PNG" class="img-shoppingcart" alt="">
+                <div class="list-items">
+                    <div class="danhmuccart">
+                        <div class="row">
+                            <div class="col-6">Items</div>
+                            <div class="col-3">Quantity</div>
+                            <div class="col-3">Price</div>
+                        </div>
+                    </div>
+                    <div id="stylecart">
+                        <% for(var i = 0; i < CartBalls.length; i ++) {%>
+                        <div class="row item-cart d-flex align-items-center" id="itemball<%= CartBalls[i].item_id %>">
+                            <div class="col-3"><img src="/images/balls/<%= CartBalls[i].item_id %>.png" class="img-fluid"
+                                    alt=""></div>
+                            <div class="col-3">
+                                <%= CartBalls[i].Pokeball[0].name %>
+                            </div>
+                            <div class="col-3"><input class="form-control" type="number" min="1" value="1" id="example-number-input" minlength=1>
+                            </div>
+                            <div class="col-2">
+                                <div class="donGia"><img src="/images/pokeCoin.png" class="img-fluid" alt="">
+                                    <%= CartBalls[i].InfoBall[0].price %>
+                                </div>
+                            </div>
+                            <div class="col-1">
+                                <i class="fas fa-trash delete" id="delball<%= CartBalls[i].item_id %>"></i>
+                            </div>
+                        </div>
+                        <%  }%>
+
+                        <% for(var i = 0; i < CartTools.length; i ++) {%>
+                        <div class="row item-cart d-flex align-items-center" id="itemtool<%= CartTools[i].item_id %>">
+                            <div class="col-3"><img src="/images/toolboxes/<%= CartTools[i].item_id %>.png" class="img-fluid"
+                                    alt=""></div>
+                            <div class="col-3">
+                                <%= CartTools[i].Toolbox[0].name %>
+                            </div>
+                            <div class="col-3"><input class="form-control" type="number" min="1" value="1" id="example-number-input" minlength=1>
+                            </div>
+                            <div class="col-2">
+                                <div class="donGia"><img src="/images/pokeCoin.png" class="img-fluid" alt="">
+                                    <%= CartTools[i].InfoTool[0].price %>
+                                </div>
+                            </div>
+                            <div class="col-1">
+                                <i class="fas fa-trash delete" id="deltool<%= CartTools[i].item_id %>"></i>
+                            </div>
+                        </div>
+                        <%  }%>
+                    </div>
+                </div>
+                <div class="btn-ketthuc-cart">
+                    <div class="row d-flex justify-content-around">
+                        <div class="col-5 tongGia"><span>TỔNG GIÁ:</span> <img src="/images/pokeCoin.png" class="img-fluid"
+                                alt="">0</div>
+                        <div class="col-3"><button class="btn btn-primary btn-mua">Check out</button></div>
+                        <div class="col-3"><button class="btn btn-primary btn-quayve">Back</button></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

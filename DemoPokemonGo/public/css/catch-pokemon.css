@@ -1,0 +1,198 @@
+*{
+    padding:0;
+    margin: 0;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+.background-main-pokemon{
+    background: url("/images/Background-create-figure.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.background-catch-pokemon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #463e3e9c;
+    visibility: hidden;
+    opacity: 0;
+    transition: 1s;
+}
+
+.main-catch-pokemon {
+    position: absolute;
+    background: url("/images/background-catch-pokemon.png");
+    background-size: cover;
+    width: 26%;
+    height: 80%;
+    top: 10%;
+    left: 37%;
+    border-radius: 20px;
+    box-shadow: 2px 2px 30px;
+    visibility: hidden;
+    transition: 1s;
+    opacity: 0;
+    transform: scale(0);
+}
+
+.pokemon-catch {
+    position: absolute;
+    width: 30%;
+    left: 35%;
+    bottom: 45%;
+    z-index: 3;
+    transform-origin: 40% -200%;
+}
+
+.content-catch-pokemon {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    perspective: 400px;
+}
+
+.background-catch-pokemon.show-background {
+    visibility: visible;
+    opacity: 1;
+}
+
+.main-catch-pokemon.show-catch-pokemon {
+    animation:  hello 1s forwards;
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+    overflow: hidden;
+}
+i.fas.fa-running.myRun {
+    top: 5%;
+    left: 5%;
+    position: absolute;
+    transform: rotatey(180deg);
+    font-size: 3em;
+    color: #3e1616;
+    transition: .5s;
+    z-index: 5;
+}
+
+i.fas.fa-running.myRun:hover {
+    color: #f4f4f5;
+}
+
+.pokeball {
+    position: absolute;
+    width: 30%;
+    bottom: 0;
+    left: 35%;
+    cursor: all-scroll;
+    z-index: 3;
+    perspective: 400;
+}
+
+.list-pokeball li, .list-berry li {
+    display: block;
+    list-style: none;
+    width: 20%;
+    float: left;
+    cursor: pointer;
+    position: relative;
+}
+
+.list-pokeball,.list-berry {
+    position: absolute;
+    bottom: 3%;
+    width: 100%;
+    height: auto;
+    left: 100%;
+    font-family: 'Righteous', cursive;
+    text-align: center;
+    font-weight: 400;
+    color: #fbf0f0;
+    opacity: 0;
+    z-index: 4;
+}
+
+.list-pokeball ul,.list-berry ul {
+    background: #ccc5c5db;
+    height: 100%;
+    padding: 10px;
+}
+
+.item-pokeball,.item-berry {
+    position: absolute;
+    width: 15%;
+    bottom: 7%;
+    right: 7%;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.item-berry {
+    left: 7%;
+}
+
+.list-berry {
+    left: -100%;
+}
+.click-event{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
+
+.gotcha,.escape {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-family: 'Righteous', cursive;
+    color: white;
+    font-size: 3em;
+    top: 30%;
+    transform: scale(0);
+}
+
+.like {
+    position: absolute;
+    bottom: 62%;
+    left: 50%;
+    width: 11%;
+    opacity: 0;
+}
+
+button.btn.btn-primary.mybuttonCatch {
+    font-family: 'Righteous', cursive;
+    background: #946e42;
+    padding: 30px;
+    font-size: 25px;
+    border-radius: 50%;
+    border: 2px solid gray;
+    box-shadow: 2px 2px 50px #101010;
+}
+
+.number,.numberball1,.numberball2,.numberball3,.numberball4,.numberberry1,.numberberry2,.numberberry3,.numberberry4 {
+    position: absolute;
+    background: #2b2929bd;
+    bottom: 9%;
+    left: 13%;
+    padding: 0 5px;
+    color: white;
+    border-radius: 50%;
+    font-family: 'Righteous', cursive;
+}
+
+.numberball1,.numberball2,.numberball3,.numberball4,.numberberry1,.numberberry2,.numberberry3,.numberberry4 {
+    left: 6%;
+    font-size: 13px;
+}

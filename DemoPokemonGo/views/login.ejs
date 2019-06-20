@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link href="https://fonts.googleapis.com/css?family=Mukta:300,400,500,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+    <script src="/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/login.js"></script>
+</head>
+
+<body>
+
+    <div class="container-fluid main">
+        <div class="myBackground">
+            <div class="polygonBottom"></div>
+            <div class="polygonBottom2"></div>
+            <div class="polygonTop"></div>
+        </div>
+
+        <div class="container-fluid banner-top">
+            <a href="https://www.pokemoncenter.com/">
+                <img src="/images/Advertisement/QC1.png" alt="#" id="bannner_top">
+            </a>
+        </div>
+
+        <div class="container-fluid content ">
+            <div class="row card-deck">
+                <div class="col-md-8 contentLeft">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100 imgfullscreen" src="/images/pokemon_1.jpg" alt="First slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100 imgfullscreen" src="/images/pokemon_2.jpg" alt="Second slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100 imgfullscreen" src="/images/pokemon_3.jpg" alt="Third slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100 imgfullscreen" src="/images/pokemon_4.jpg" alt="Third slide">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- het khung hinh anh -->
+                <div class="col-md-4 contentRight" id="frmLogin">
+                    <div class="Login">Login</div>
+                    <form action="/login" method="POST" onsubmit="return Validation()">
+                        <input type="text" name="username" id="UserName" placeholder="UserName" title="Username"
+                        autocomplete="off" autofocus="autofocus">
+                        <input type="password" name="password" id="password" placeholder="Password" title="password" 
+                        autocomplete="off">
+                        <div class="text-right p-t-8 p-b-31">
+                            <a href="#" id="lbForgot">
+                                Forgot password
+                            </a>
+                            
+                            <a href="/register">
+                                Sign Up
+                            </a>
+                        </div>
+                        <div id="Fail" value="<%= error %>"></div>
+                        <input type="submit" class="btn btn-primary btnregister" 
+                        value="Login" type="submit" id="btnLogin">
+                    </form>
+                </div>
+                <!-- het khung dang nhap -->
+
+                <div class="col-md-4 contentRight" id="frmEmail">
+                    <div class="Login">Forgot Password</div>
+                    <input type="email" name="email" id="email" 
+                    placeholder="Email..."
+                    autocomplete="off" autofocus="autofocus">
+                    <div class="panelButton">
+                        <input type="button" class="btn btn-primary btnsendemail" 
+                        value="Send" id="btnSend">
+                        <input type="button" class="btn btn-primary btnback" 
+                        value="Back" id="btnBack">
+                    </div>
+                </div>
+                <!-- het khung gui mail -->
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

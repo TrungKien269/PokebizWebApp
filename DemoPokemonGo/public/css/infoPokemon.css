@@ -1,0 +1,124 @@
+
+.imgpokemon{
+    cursor: pointer;
+}
+.modal-content.myContent{
+    height: 700px;
+    background: url('../images/background-info.png');
+    background-size: cover;
+    border-radius: 20px;
+}
+
+.infoPokemon {
+    position: absolute;
+    margin-top: 14px;
+    left: 35%;
+    width: 30%;
+    z-index: 2;
+}
+
+.contentInfo {
+    width: 90%;
+    height: 76%;
+    left: 5%;
+    background: white;
+    position: absolute;
+    bottom: 5%;
+    border-radius: 20px;
+    box-shadow: 2px 2px 50px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #6b5e5e;
+}
+
+i.fas.fa-times-circle.myClose {
+    font-size: 40px;
+    position: absolute;
+    left: 50%;
+    margin-left: -25px;
+    bottom: 6%;
+}
+
+i.fas.fa-times-circle.myClose:hover {
+    color: gray;
+}
+
+.name {
+    margin-top: 40px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.hp {
+    width: 70%;
+    height: 10px;
+    margin: auto;
+    background: #3b711a;
+    border-radius: 40px;
+    box-shadow: 1px 1px 5px;
+    margin-bottom: 4px;
+}
+
+.numberHp {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.weight, .height, .type, .attack, .defense, .speed {
+    display: inline-block;
+    padding: 0 40px;
+    font-size: 12px;
+    font-weight: 800;
+    color: #989494;
+    margin: 20px 0;
+}
+
+
+img.imgType {
+    width: 30px;
+    display: block;
+}
+
+
+.type {
+    border-left: 2px solid gray;
+    border-right: 2px solid gray;
+}
+
+.numberWeight, .numberHeight, .numberAttack, .numberDefense, .numberSpeed {
+    font-size: 20px;
+    color: #6b5e5e;
+}
+
+.defense {
+    border-left: 2px solid gray;
+    border-right: 2px solid gray;
+}
+.total{
+    padding: 0 40px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #989494;
+}
+
+.numberTotal{
+    font-size: 33px;
+    color: #272525;
+}
+.evolution1, .evolution2, .evolution3 {
+    width: 65px;
+    display: inline-block;
+    padding: 0;
+}
+
+.evolution {
+    border-top: 2px solid gray;
+    margin: 0 20px;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+i.fas.fa-chevron-right.myArrow {
+    padding: 0 20px;
+}
